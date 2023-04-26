@@ -2,7 +2,7 @@
 
 Basic snake game, implemented in Greenfrog
 
-# TODO
+### TODO
 
 - [ ] Controls
 - [ ] Config
