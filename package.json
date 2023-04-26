@@ -1,0 +1,6 @@
+{
+  "name": "snake",
+  "main": "snake.js",
+  "version": "1.0.0",
+  "displayName": "snake"
+}
