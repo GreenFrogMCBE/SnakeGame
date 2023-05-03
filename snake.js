@@ -28,7 +28,7 @@ module.exports = {
         const posY = Math.floor(y);
 
         player.teleport(x, posY + 10, z);
-        player.world.placeBlock(Math.floor(x), posY + 1, Math.floor(z), new DarkOakLog().getRuntimeId());
+        player.world.placeBlock(Math.floor(x), posY + 1, Math.floor(z), new DarkOakLog().getRuntimeID());
 
         // Set up interval for moving snake blocks
         let snakeBlockIndex = 0; // index for the snake block currently being moved
@@ -36,7 +36,7 @@ module.exports = {
         const snakeMoveInterval = setInterval(() => {
           snakeBlockIndex++;
 
-          player.world.placeBlock(Math.floor(x) - (snakeBlockIndex + 1), posY + 1, Math.floor(z), new DarkOakLog().getRuntimeId());
+          player.world.placeBlock(Math.floor(x) - (snakeBlockIndex + 1), posY + 1, Math.floor(z), new DarkOakLog().getRuntimeID());
           player.world.breakBlock(Math.floor(x) - snakeBlockIndex, posY + 1, Math.floor(z));
           player.world.breakBlock(Math.floor(x), posY + 1, Math.floor(z));
         }, 1000);
@@ -47,14 +47,14 @@ module.exports = {
             const posX = Math.floor(x + i);
             const posZ = Math.floor(z + j);
 
-            player.world.placeBlock(posX, posY, posZ, new SmoothQuartzBlock().getRuntimeId());
+            player.world.placeBlock(posX, posY, posZ, new SmoothQuartzBlock().getRuntimeID());
           }
         }
 
         // Clean up after game ends
         setTimeout(() => {
           clearInterval(snakeMoveInterval);
-          player.world.breakBlock(Math.floor(x) - (snakeBlockIndex + 1), posY + 1, Math.floor(z), new DarkOakLog().getRuntimeId());
+          player.world.breakBlock(Math.floor(x) - (snakeBlockIndex + 1), posY + 1, Math.floor(z), new DarkOakLog().getRuntimeID());
 
           for (let i = -8; i <= 8; i++) {
             for (let j = -8; j <= 8; j++) {
